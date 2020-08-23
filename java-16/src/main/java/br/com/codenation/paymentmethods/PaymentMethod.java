@@ -2,7 +2,8 @@ package br.com.codenation.paymentmethods;
 
 public enum PaymentMethod {
 
-    CASH(null), DEBIT_CARD(null), CREDIT_CARD(null), TRANSFER(null);
+    CASH(new CashStrategy()), DEBIT_CARD(new DebitCardStrategy()),
+    CREDIT_CARD(new CreditCardStrategy()), TRANSFER(new TransferStrategy());
 
     private PriceStrategy priceStrategy;
 
